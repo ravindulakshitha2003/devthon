@@ -4,7 +4,7 @@ import NormalMsg from './NormalMsg';
 
 const MessageBubble = ({ message }) => {
   const { text, sender, timestamp, isError } = message;
-  const [status, setStatus] = useState(false);
+  const [status, setStatus] = useState(true);
   const [palces,setplaces] =useState([]);
 
   useEffect(() => {
@@ -42,11 +42,11 @@ const MessageBubble = ({ message }) => {
 
   return (
   <>
-    {console.log(palces)}
+   
     {status ? (palces.map((n,index)=>{
     
       (<ImageCard key={index} message={n} />)
-      console.log(n);
+      
     })
       
     ) : (
