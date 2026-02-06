@@ -6,6 +6,7 @@ const MessageBubble = ({ message }) => {
   const { text, sender, timestamp, isError } = message;
   const [status, setStatus] = useState(true);
   const [palces,setplaces] =useState([]);
+  const [eroor,rejio]=useState('');
 
   useEffect(() => {
     try {
@@ -19,7 +20,7 @@ const MessageBubble = ({ message }) => {
         setStatus(false); // optional: reset if no trip
       }
     } catch (e) {
-      console.log(e)
+    rejio(e);
       setStatus(false);
     }
   }, [text]); // run every time the message text changes

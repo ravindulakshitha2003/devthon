@@ -2,9 +2,8 @@ import React from 'react';
 
 const ImageCard = ({message}) => {
     // Check if trip data exists
-    if (!message?.trip) return null;
 
-    const { day, city, places } = message.trip;
+    const { day, city, places } = message;
 
     return (
         <div className='card-container'>
