@@ -377,6 +377,58 @@ body {
   text-align: center;
 }
 
+.card-container {
+    display: flex;
+    flex-direction: row;
+    background-color: #764ba2;
+    border-radius: 0.9rem;
+    width: 70%;
+    overflow: hidden;
+}
+
+.image-container {
+    flex-shrink: 0;
+}
+
+.image-container img {
+    width: 200px;
+    height: 100%;
+    object-fit: cover;
+    border-right: 1px solid black;
+}
+
+.content-container {
+    flex: 1;
+    background-color: #e2e8f0;
+    padding: 1.5rem;
+}
+
+.content-container h3 {
+    margin: 0 0 1rem 0;
+    color: #764ba2;
+}
+
+.places-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.place-item {
+    background-color: white;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+}
+
+.place-item p {
+    margin: 0.25rem 0;
+}
+
+.place-type {
+    font-size: 0.875rem;
+    color: #666;
+}
+
 /* ===================================
    Responsive Design
    =================================== */
@@ -494,3 +546,10 @@ body {
     transition-duration: 0.01ms !important;
   }
 }
+
+.wrapperClassHidden,.images-card-hidden{
+  display: none;
+}
+
+
+

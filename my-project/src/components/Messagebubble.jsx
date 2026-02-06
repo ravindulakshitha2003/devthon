@@ -1,15 +1,29 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import ImageCard from './Imagecard';
+import NormalMsg from './NormalMsg';
 
-/**
- * MessageBubble Component
- * Renders a single message bubble (user or bot)
- * 
- * @param {Object} message - Message object containing text, sender, timestamp, etc.
- */
 const MessageBubble = ({ message }) => {
   const { text, sender, timestamp, isError } = message;
+  const [status, setStatus] = useState(false);
+  const [palces,setplaces] =useState([]);
 
-  // Format timestamp for display
+  useEffect(() => {
+    try {
+      const parsed = JSON.parse(text);
+      if (parsed.trip) {
+         setStatus(true);
+         setplaces(parsed.trip);
+       
+          
+      } else {
+        setStatus(false); // optional: reset if no trip
+      }
+    } catch (e) {
+      console.log(e)
+      setStatus(false);
+    }
+  }, [text]); // run every time the message text changes
+
   const formatTime = (isoString) => {
     const date = new Date(isoString);
     return date.toLocaleTimeString('en-US', { 
@@ -18,7 +32,6 @@ const MessageBubble = ({ message }) => {
     });
   };
 
-  // Determine CSS classes based on message sender
   const wrapperClass = sender === 'user' 
     ? 'message-wrapper user-message-wrapper' 
     : 'message-wrapper bot-message-wrapper';
@@ -28,18 +41,25 @@ const MessageBubble = ({ message }) => {
     : `message-bubble bot-bubble ${isError ? 'error-bubble' : ''}`;
 
   return (
-    <div className={wrapperClass}>
-      <div className={bubbleClass}>
-        {/* Message text */}
-        <p className="message-text">{text}</p>
-        
-        {/* Timestamp */}
-        <span className="message-time">
-          {formatTime(timestamp)}
-        </span>
-      </div>
-    </div>
-  );
-};
+  <>
+    {console.log(palces)}
+    {status ? (palces.map((n,index)=>{
+    
+      (<ImageCard key={index} message={n} />)
+      console.log(n);
+    })
+      
+    ) : (
+      <NormalMsg
+        wrapperClass={wrapperClass}
+        bubbleClass={bubbleClass} // notice spelling: bubbleClass
+        text={text}
+        showtime={formatTime(timestamp)}
+      />
+    )}
+  </>
+);
+}
+
 
 export default MessageBubble;

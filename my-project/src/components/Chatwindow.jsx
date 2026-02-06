@@ -38,6 +38,7 @@ const ChatWindow = ({ messages, isLoading }) => {
           <MessageBubble 
             key={message.id}
             message={message}
+            
           />
         ))}
 
@@ -50,7 +51,7 @@ const ChatWindow = ({ messages, isLoading }) => {
                 <span></span>
                 <span></span>
               </div>
-              <span className="typing-text">AI is typing...</span>
+              
             </div>
           </div>
         )}

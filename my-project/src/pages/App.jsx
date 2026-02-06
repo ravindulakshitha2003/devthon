@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import ChatApp from './components/ChatApp';
-import './chatbot.css';
+import ChatApp from '../components/ChatApp';
+import '../chatbot.css';
 
 function App() {
   return (
