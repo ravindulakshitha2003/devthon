@@ -1,0 +1,300 @@
+.itinerary-page {
+  min-height: 100vh;
+  background: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+}
+
+.itinerary-header {
+  background: white;
+  padding: 20px 32px;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.header-info {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header-info h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.duration-badge {
+  padding: 6px 12px;
+  background: var(--light-gray);
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-gray);
+}
+
+.share-btn {
+  padding: 10px 24px;
+  color: white;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.share-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(31, 106, 225, 0.3);
+}
+
+.itinerary-container {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.itinerary-sidebar {
+  width: 280px;
+  background: white;
+  border-right: 1px solid var(--border-color);
+  padding: 24px;
+  overflow-y: auto;
+}
+
+.itinerary-sidebar h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 20px;
+}
+
+.day-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.day-btn {
+  padding: 16px;
+  background: transparent;
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  text-align: left;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.day-btn:hover {
+  border-color: var(--primary-blue);
+  background: rgba(31, 106, 225, 0.05);
+}
+
+.day-btn.active {
+  background: linear-gradient(135deg, #1F6AE1 0%, #1ABC9C 100%);
+  border-color: transparent;
+  color: white;
+}
+
+.day-number {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  opacity: 0.8;
+  margin-bottom: 4px;
+}
+
+.day-btn.active .day-number {
+  opacity: 1;
+}
+
+.day-title {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.itinerary-main {
+  flex: 1;
+  padding: 32px;
+  overflow-y: auto;
+  max-width: 900px;
+}
+
+.day-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.day-header h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.edit-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: white;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-gray);
+  transition: all 0.2s ease;
+}
+
+.edit-btn:hover {
+  border-color: var(--primary-blue);
+  color: var(--primary-blue);
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.timeline-item {
+  display: flex;
+  gap: 24px;
+}
+
+.timeline-marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 8px;
+}
+
+.timeline-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1F6AE1 0%, #1ABC9C 100%);
+  box-shadow: 0 0 0 4px rgba(31, 106, 225, 0.1);
+  flex-shrink: 0;
+}
+
+.timeline-line {
+  width: 2px;
+  flex: 1;
+  background: var(--border-color);
+  margin: 8px 0;
+  min-height: 60px;
+}
+
+.activity-card {
+  flex: 1;
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: all 0.2s ease;
+}
+
+.activity-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.activity-time {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--primary-blue);
+  margin-bottom: 12px;
+}
+
+.activity-content {
+  display: flex;
+  gap: 16px;
+}
+
+.activity-icon {
+  font-size: 40px;
+  flex-shrink: 0;
+}
+
+.activity-info {
+  flex: 1;
+}
+
+.activity-info h4 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 6px;
+}
+
+.activity-info p {
+  font-size: 14px;
+  color: var(--text-gray);
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.activity-duration {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--text-gray);
+  padding: 4px 12px;
+  background: var(--light-gray);
+  border-radius: 6px;
+}
+
+.add-activity-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 16px;
+  background: white;
+  border: 2px dashed var(--border-color);
+  border-radius: 12px;
+  color: var(--text-gray);
+  font-weight: 600;
+  font-size: 14px;
+  margin-top: 20px;
+  transition: all 0.2s ease;
+}
+
+.add-activity-btn:hover {
+  border-color: var(--primary-blue);
+  color: var(--primary-blue);
+  background: rgba(31, 106, 225, 0.05);
+}
+
+@media (max-width: 968px) {
+  .itinerary-sidebar {
+    position: fixed;
+    left: -280px;
+    top: 0;
+    height: 100vh;
+    z-index: 100;
+    transition: left 0.3s ease;
+  }
+
+  .itinerary-main {
+    padding: 24px 16px;
+  }
+
+  .timeline-item {
+    gap: 16px;
+  }
+
+  .activity-content {
+    flex-direction: column;
+    gap: 12px;
+  }
+}

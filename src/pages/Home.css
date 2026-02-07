@@ -1,0 +1,150 @@
+.home-page {
+  min-height: 100vh;
+  background: white;
+}
+
+.home-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 48px;
+  border-bottom: 1px solid var(--border-color);
+  height: 10vh;
+}
+
+.site-logo {
+  display: flex;
+  width: 100px;
+}
+
+.dashboard-link {
+  font-weight: 600;
+  font-size: 14px;
+  color: black;
+  display: flex;
+  justify-content: right;
+  transition: all 0.3s ease;
+}
+
+.login-btn {
+  padding: 10px 24px;
+  /*background: white;*/
+  color: white;
+  /*border: 2px solid var(--primary-blue);*/
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(31, 106, 225, 0.4);
+}
+
+.home-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 100px);
+  padding: 40px 20px;
+}
+
+.hero-section {
+  text-align: center;
+  max-width: 1200px;
+  animation: fadeIn 0.8s ease-out;
+}
+
+.hero-icon {
+  margin-bottom: 32px;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-title {
+  font-size: 72px;
+  font-weight: 800;
+  margin-bottom: 16px;
+  letter-spacing: -2px;
+}
+
+.hero-subtitle {
+  font-family: 'inter';
+  font-size: 48px;
+  color: var(--text-dark);
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.hero-description {
+  font-size: 48px;
+  font-family: 'inter';
+  color: var(--text-dark);
+  margin-bottom: 40px;
+  /*font-style: italic;*/
+}
+
+.cta-button {
+  padding: 16px 48px;
+  font-size: 32px;
+  font-family: 'inter';
+  font-weight: 600;
+  color: white;
+  border-radius: 50px;
+  box-shadow: 0 4px 16px rgba(31, 106, 225, 0.3);
+  transition: all 0.3s ease;
+  margin-bottom: 48px;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(31, 106, 225, 0.4);
+}
+
+.cta-button:active {
+  transform: translateY(0);
+}
+
+.features {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 24px;
+  font-family: 'inter';
+  color: var(--text-gray);
+  font-weight: 500;
+}
+
+.feature-icon {
+  font-size: 20px;
+}
+
+@media (max-width: 768px) {
+  .home-header {
+    padding: 20px 24px;
+  }
+
+  .hero-title {
+    font-size: 48px;
+  }
+
+  .hero-subtitle {
+    font-size: 20px;
+  }
+
+  .features {
+    gap: 24px;
+  }
+
+  .feature-item {
+    font-size: 13px;
+  }
+}
