@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import '../chatbot.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import PageOne from './Chatapp';
 import PageTwo from './TripItinerary';

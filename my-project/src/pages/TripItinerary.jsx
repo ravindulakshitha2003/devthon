@@ -6,18 +6,14 @@ const TripItinerary = () => {
     
     const location = useLocation();
     const { placesArray } = location.state || {};
-    console.log(placesArray);
+    var  sum=0;
+    placesArray.forEach(element => {
+      sum+= element.costLKR;
+      
+    });
   // All activity data
   const activities =placesArray ;
-    // {
-    //   id: 4,
-    //   time: "16:00 PM",
-    //   title: "Evening Leisure",
-    //   description: "Walk around Ella town",
-    //   note: "Visit cafes and souvenir shops",
-    //   category: "Hiking / Nature",
-    //   image: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=400&h=300&fit=crop"
-    // }
+    
 
 
   return (
@@ -82,7 +78,7 @@ const TripItinerary = () => {
             </button>
             <div className="budget-badge">
               <div className="budget-label">Budget</div>
-              <div className="budget-amount">LKR 37,000</div>
+              <div className="budget-amount">LKR {sum}</div>
             </div>
           </div>
         </div>

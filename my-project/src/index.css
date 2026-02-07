@@ -29,15 +29,7 @@
   --spacing-xl: 32px;
 }
 
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  line-height: 1.6;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  min-height: 100vh;
-  padding: var(--spacing-md);
-}
+
 
 /* Chat App Container */
 .chat-app {
@@ -60,8 +52,9 @@ body {
 
 /* Header */
 .chat-header {
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-  color: white;
+
+  
+  color: rgb(3, 172, 93);
   padding: var(--spacing-lg);
   display: flex;
   justify-content: space-between;
@@ -381,6 +374,8 @@ body {
   
   .chat-header {
     padding: var(--spacing-md);
+    
+  color: rgb(3, 172, 93);
   }
   
   .chat-title {

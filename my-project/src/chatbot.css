@@ -60,8 +60,8 @@ body {
 
 /* Header */
 .chat-header {
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-  color: white;
+ 
+  color: rgb(3, 172, 93);
   padding: var(--spacing-lg);
   display: flex;
   justify-content: space-between;
@@ -381,6 +381,8 @@ body {
   
   .chat-header {
     padding: var(--spacing-md);
+    
+  color: rgb(3, 172, 93);
   }
   
   .chat-title {
