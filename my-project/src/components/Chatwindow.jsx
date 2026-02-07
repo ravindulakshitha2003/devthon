@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import MessageBubble from './MessageBubble';
+import MessageBubble from './Messagebubble.jsx';
 
 /**
  * ChatWindow Component

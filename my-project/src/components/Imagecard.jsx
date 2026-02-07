@@ -1,31 +1,40 @@
-import React from 'react';
+import React from "react";
+import "../pages/TripItinerary.css"; // or separate ImageCard CSS if you want
+import usePlaceImage from '../Hooks/usePlaceImage'
 
-const ImageCard = ({message}) => {
-    // Check if trip data exists
 
-    const { day, city, places } = message;
 
-    return (
-        <div className='card-container'>
-            <div className='image-container'>
-                <img 
-                    src='https://tse3.mm.bing.net/th/id/OIP.U_VJuupQohwnzXcKMztqWgHaEo?rs=1&pid=ImgDetMain&o=7&rm=3' 
-                    alt='uploaded images'
-                />
-            </div>
-            <div className='content-container'>
-                <h3>Day {day}: {city}</h3>
-                <div className='places-list'>
-                    {places && places.map((place, index) => (
-                        <div key={index} className='place-item'>
-                            <p><strong>{place.name}</strong></p>
-                            {place.type && <p className='place-type'>{place.type}</p>}
-                        </div>
-                    ))}
-                </div>
-            </div>
+
+const ImageCard = ({ message }) => {
+  const {placeName,description,type,costLKR}=message;
+  const { imageUrl, loading } = usePlaceImage(placeName);
+  return (
+    <div className="activity-card">
+      <div className="card-content">
+        <div className="activity-image">
+          {loading ? (
+          <p>Loading...</p>
+        ) : (
+          <img
+            src={imageUrl || "https://via.placeholder.com/400"}
+            alt={placeName}
+          />
+        )}
         </div>
-    );
-}
+
+        <div className="activity-details">
+          <div className="activity-header">
+            <h3 className="activity-title">{placeName}</h3>
+            {message.category && (
+              <span className="activity-category">{type}</span>
+            )}
+          </div>
+          <p className="activity-description">{description}</p>
+          <p className="activity-note">{costLKR}</p>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default ImageCard;

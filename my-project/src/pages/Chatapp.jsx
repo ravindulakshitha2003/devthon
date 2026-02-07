@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
-import ChatWindow from './ChatWindow';
-import ChatInput from './ChatInput';
-import './chatbot.css';
+import ChatWindow from '../components/ChatWindow';
+import ChatInput from '../components/ChatInput';
+import '../components/chatbot.css';
 
 /**
  * Main ChatApp Component

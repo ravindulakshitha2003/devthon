@@ -1,13 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import ChatApp from '../components/ChatApp';
 import '../chatbot.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import PageOne from './Chatapp';
+import PageTwo from './TripItinerary';
 
 function App() {
   return (
+   
+   
+
+
     <div className="App">
-      <ChatApp />
+      <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<PageOne />} />
+        <Route path="/second" element={<PageTwo />} />
+      </Routes>
+    </BrowserRouter>
+      
     </div>
+  
+
+
+    
   );
 }
 
