@@ -204,7 +204,7 @@ body {
 
 /* User Bubble Styling */
 .user-bubble {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #01fe5e 0%, #00258b 100%);
   color: white;
   border-bottom-right-radius: 4px;
 }
@@ -556,4 +556,10 @@ body {
 }
 
 
+.user-bubble {
+  background: linear-gradient(135deg, #01fe5e 0%, #243a75 100%);
+  color: white;
+  border-bottom-right-radius: 4px;
+  font-size: large;
 
+}
