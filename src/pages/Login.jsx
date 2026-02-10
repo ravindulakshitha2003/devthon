@@ -31,19 +31,12 @@ const Login = () => {
   return (
     <div className="login-page">
       {/* Header */}
-      <header className="login-header">
-        <img src="/logo.png" alt="Tuora" className="header-logo" />
-        <div className="header-right">
-          <button className="dashboard-btn" onClick={() => navigate('/')}>
-            <span>Dashboard</span>
-            <div className="user-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <circle cx="12" cy="8" r="4" stroke="currentColor" strokeWidth="2"/>
-                <path d="M5 20C5 16.134 8.134 13 12 13C15.866 13 19 16.134 19 20" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-              </svg>
-            </div>
-          </button>
-        </div>
+      <header className="home-header">
+      
+        <img src="/logo.png" alt="Tuora Logo" className="site-logo" />
+        <button className="dashboard-link" onClick={() => navigate('/dashboard')}>Dashboard</button>
+        <button className="login-btn gradient-bg" onClick={() => navigate('/login')}>Login</button>
+      
       </header>
 
       {/* Main Content */}

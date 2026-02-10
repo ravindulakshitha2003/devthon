@@ -1,15 +1,44 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { emergencyAPI } from '../services/api';
 import './EmergencyPage.css';
 
 export default function EmergencyPage() {
   const [activeTab, setActiveTab] = useState("hospital");
+  const [hospitals, setHospitals] = useState([]);
+  const [policeStations, setPoliceStations] = useState([]);
+  const [emergencyContacts, setEmergencyContacts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
+
+  // Fetch emergency data on component mount
+  useEffect(() => {
+    const fetchEmergencyData = async () => {
+      try {
+        const [hospitalsData, policeData, contactsData] = await Promise.all([
+          emergencyAPI.getNearestHospitals(),
+          emergencyAPI.getNearestPoliceStations(),
+          emergencyAPI.getEmergencyContacts()
+        ]);
+        setHospitals(hospitalsData);
+        setPoliceStations(policeData);
+        setEmergencyContacts(contactsData.contacts);
+      } catch (error) {
+        console.error('Error fetching emergency data:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchEmergencyData();
+  }, []);
 
   return (
     <div>
       <header className="home-header">
       
         <img src="/logo.png" alt="Tuora Logo" className="site-logo" />
-        <button className="dashboard-link" onClick={() => navigate('/EmergencyPage')}>Dashboard</button>
+        <button className="dashboard-link" onClick={() => navigate('/dashboard')}>Dashboard</button>
         <button className="login-btn gradient-bg" onClick={() => navigate('/login')}>Login</button>
       
       </header>

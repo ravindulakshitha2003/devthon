@@ -11,7 +11,7 @@ const Home = () => {
       <header className="home-header">
       
         <img src="/logo.png" alt="Tuora Logo" className="site-logo" />
-        <button className="dashboard-link" onClick={() => navigate('/emergencypage')}>Dashboard</button>
+        <button className="dashboard-link" onClick={() => navigate("/dashboard")}>Dashboard</button>
         <button className="login-btn gradient-bg" onClick={() => navigate('/login')}>Login</button>
       
       </header>
